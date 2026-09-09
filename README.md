@@ -50,6 +50,10 @@ Corrections from owners are welcome—especially details of the cockpit, stern f
 
 Personal reference photographs are kept out of this repository. The pictures above are model renders.
 
+## Take Laurine sailing, too
+
+My other project, [VSail](https://github.com/SebastienTr/VSail), is a sailing simulator built around Laurine. It explores sail trim, wind and waves, with the aim of bringing the feel of sailing her to the screen.
+
 <details>
 <summary>For people who want to work on the model</summary>
 
