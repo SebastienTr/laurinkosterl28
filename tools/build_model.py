@@ -469,17 +469,22 @@ for side,label in [(-1,'STARBOARD'),(1,'PORT')]:
  cut_hole(track,(x,y,rail_bottom+.2),(x,y,rail_bottom+3.2),.4)
  boolean(track,dup(hull,'Deck contact trim'))
  register(track);rig_points['GENOA_CAR_'+label]=[x,y,rail_bottom+3.65]
-# The traveller spans the middle of the cockpit directly below the boom sheet tab.
-trav_x,trav_y,trav_bottom=225.0,23.85,31.1
-trav=box('MAINSHEET_TRAVELLER',(trav_x,0,trav_bottom+.8),(2.4,49.6,1.6),silver)
+# The traveller rests directly on the cockpit seats below the boom sheet tab.
+trav_x,trav_y=225.0,18.0
+seat_contacts=[]
 for side in (-1,1):
- y=side*trav_y
- boolean(rear,cyl('Traveller timber backing',(trav_x,y,29.4),(trav_x,y,31.0),1.8,wood),'UNION')
- boolean(trav,cyl('Traveller pin',(trav_x,y,29.5),(trav_x,y,31.5),.45,silver),'UNION')
- for support in (rear,hull):cut_hole(support,(trav_x,y,29.3),(trav_x,y,32),.575)
-boolean(trav,box('Mainsheet car',(trav_x,0,33.2),(3,3.6,1.3),silver),'UNION')
-cut_hole(trav,(trav_x,0,31.6),(trav_x,0,35.2),.4)
-register(trav);rig_points['MAINSHEET_CAR']=[trav_x,0,34.9]
+ hit,q,n,idx=hull.ray_cast(Vector((trav_x,side*trav_y,80)),Vector((0,0,-1)))
+ if not hit:raise RuntimeError('Mainsheet traveller misses cockpit seat')
+ seat_contacts.append(q)
+trav_bottom=max(q.z for q in seat_contacts)
+trav=box('MAINSHEET_TRAVELLER',(trav_x,0,trav_bottom+.8),(2.4,40.0,1.6),silver)
+for q in seat_contacts:
+ boolean(trav,cyl('Traveller pin',q-Vector((0,0,1.6)),q+Vector((0,0,.4)),.45,silver),'UNION')
+ cut_hole(hull,q-Vector((0,0,1.8)),q+Vector((0,0,.5)),.575)
+boolean(trav,box('Mainsheet car',(trav_x,0,trav_bottom+2.1),(3,3.6,1.3),silver),'UNION')
+cut_hole(trav,(trav_x,0,trav_bottom+.5),(trav_x,0,trav_bottom+4.1),.4)
+boolean(trav,dup(hull,'Cockpit seat contact trim'))
+register(trav);rig_points['MAINSHEET_CAR']=[trav_x,0,trav_bottom+3.8]
 # Blind holes in external lugs avoid the metal cores through the spars.
 def spar_eye(owner,label,point):
  p=Vector(point)

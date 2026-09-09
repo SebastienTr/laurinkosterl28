@@ -40,7 +40,7 @@ The mainsail's 313.3 mm luff and 110 mm foot follow the 9.4 m / 3.3 m dimensions
 
 ![Cockpit, joined timber trim and mainsheet traveller](images/cockpit.png)
 
-The **mainsheet traveller** spans the middle of the cockpit, 225 mm aft of the bow. The car is directly below the boom sheet tab, so the centred sheet hangs almost vertically. The 49.6 mm rail has two 0.9 mm locating pins, 47.7 mm apart, for 1.15 mm sockets in the side timber backing pads and deck. Glue it after fitting the joined timber assembly. The centre car has an eyelet pilot hole. It is fixed for this display model.
+The **mainsheet traveller** spans the middle of the cockpit, 225 mm aft of the bow. The car is directly below the boom sheet tab, so the centred sheet hangs almost vertically. The 40 mm rail rests directly on the cockpit seats, below the timber coaming caps. Its two 0.9 mm locating pins are 36 mm apart and fit 1.15 mm sockets in the seats. Dry-fit the rail on both seats before gluing. The centre car has an eyelet pilot hole. It is fixed for this display model.
 
 Lead the mainsheet from the lower boom-end tab to the traveller car, back to the boom tab and back to the car. This simple two-pass representation replaces working miniature blocks. Leave the line slack enough to pose the boom. Attach the vang from the lower forward boom tab to a mast-foot eye.
 

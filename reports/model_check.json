@@ -1,5 +1,5 @@
 {
-  "model_sha256": "905169319c5a6155843f242ba03e2e4a56727d13e0b575756b5331c3233467dc",
+  "model_sha256": "4fbab2b3625a0dcf8303cd9e7cf2bc845e009d16adaa7db0a829224f537cd729",
   "private_images": 0,
   "embedded_notes": 0,
   "linked_libraries": 0,
@@ -171,7 +171,7 @@
     },
     {
       "part": "WOOD_COAMING_ASSEMBLY",
-      "triangles": 6598,
+      "triangles": 5984,
       "non_manifold_edges": 0,
       "connected_components": 1,
       "dimensions_mm": [
@@ -336,13 +336,13 @@
     },
     {
       "part": "MAINSHEET_TRAVELLER",
-      "triangles": 524,
+      "triangles": 528,
       "non_manifold_edges": 0,
       "connected_components": 1,
       "dimensions_mm": [
         3.0,
-        49.6,
-        4.35
+        40.0,
+        4.35001
       ]
     },
     {
@@ -435,7 +435,7 @@
     },
     {
       "part": "UPPER_DECK",
-      "triangles": 399418,
+      "triangles": 399398,
       "non_manifold_edges": 0,
       "connected_components": 1,
       "dimensions_mm": [
