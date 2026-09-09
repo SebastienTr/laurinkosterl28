@@ -23,6 +23,10 @@ This is the **current development model**, ready for a first test build. Version
 
 You do **not** need Blender or any scripts to print the model. Open the `.3mf` **as a project** in Bambu Studio, select your printer and filaments, and begin with **plate 01: fit tests**.
 
+![All ten printing plates in Bambu Studio, with the hull, deck, timber, fittings and fit tests](docs/screenshots/bambu_plate_overview.webp)
+
+*One project, ten plates: from the long-keel hull to the smallest fittings. Print and assemble at your own pace.*
+
 ## A boat you can build in stages
 
 The long-keel hull stays in one full-length piece. The deck lifts off horizontally, with five concealed pins to help line up the joint. Glue, a little filler and a matching paint touch-up will help the seam disappear.
@@ -64,7 +68,7 @@ These are flat templates fitted to the **1:30 model**, not plans for full-size s
 
 Corrections from owners are welcome—especially details of the cockpit, stern fittings and rig. [Share an observation or a build report](https://github.com/SebastienTr/laurinkosterl28/issues). Tell us which boat or detail you are comparing, and include a measurement or photograph if you are happy for it to be public.
 
-Personal reference photographs are kept out of this repository. The pictures above are model renders.
+Personal reference photographs are kept out of this repository. The pictures above are model renders and a Bambu Studio screenshot.
 
 ## Take Laurine sailing, too
 
