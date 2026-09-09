@@ -12,6 +12,8 @@ def view(n,loc,target,scale):
 view('assembled_model',(500,-700,420),(139,0,173),680)
 view('straight_rudder_edge',(259,-220,-19),(249,0,-19),87)
 view('hull_assembly',(430,-500,240),(139,0,4),335)
+view('deck_rigging',(215,-170,190),(175,0,36),180)
+view('masthead',(134,-65,416),(109,0,395),36)
 view('cockpit',(190,-165,135),(259,0,34),125)
 view('tiller_fitting',(325,-80,75),(278,0,36),45)
 view('bow_pulpit',(-95,-110,100),(24,0,43),105)

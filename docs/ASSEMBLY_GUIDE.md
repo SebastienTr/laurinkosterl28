@@ -36,7 +36,7 @@ Commercial recommendations and purchase links are in `FILAMENT_SHOPPING_LIST.md`
 
 ## Fit tests first
 
-Plate 01 contains four test blocks and extra copies of two washboards, one alignment pin, both companionway channels, and the mast shoe. These six extra copies are for test fitting; do not add them to the completed model.
+Plate 01 contains five test blocks and extra copies of two washboards, one alignment pin, both companionway channels, and the mast shoe. These six extra copies are for test fitting; do not add them to the completed model.
 
 The hull-joint coupon offers 3.15 / 3.25 / 3.35 mm holes, in that order from the notched end, for the 3 mm alignment pin. The mast-rod coupon offers 2.2 / 2.3 / 2.4 mm holes for a 2 mm metal core. The companionway coupon receives the two metal channels before testing the removable washboards. Test the mast shoe on its matching step coupon.
 
@@ -51,22 +51,24 @@ Print the window plate early. Check the fit of the first inserts in the finished
 3. Finish the hull/deck seam before mounting small details. A truly invisible joint requires local filling, sanding and matching burgundy paint. Multicolor printing alone does not hide a glue seam.
 4. Glue the mast shoe, the two vertical channels and the two horizontal hatch rails into their seats. Keep the channels' grooves and the mast-core bore free of glue. Present the hatch and washboards while checking alignment, then remove them until the glue has cured.
 5. Fit each window from outside into its matching seat. `PORT` is the boat's left side when facing forward; `STARBOARD` is the right. Window 1 is forward, window 2 aft. Use a small amount of PLA-compatible glue on the concealed rear face. Keep it off the visible face.
-6. Glue the timber trim, tiller, handrails and aft crosspiece. The two 1.2 mm washboards slide upward out of the 1.6 mm grooves; the horizontal hatch slides toward the bow and can be lifted off. Leave these three closing panels unglued if you want them removable.
+6. Glue the joined coaming-cap assembly, the small cockpit trim and the handrails. Fit the tiller with its cross-pin. The two 1.2 mm washboards slide upward out of the 1.6 mm grooves; the horizontal hatch slides toward the bow and can be lifted off. Leave these three closing panels unglued if you want them removable.
 7. Assemble the spars and rigging, then the pulpits and rudder guard. Work with light thread tension and protect the small printed tubes during handling.
 
 ![Tiller heel and rudder head](images/tiller_fitting.png)
+
+See the [rigging and sail guide](RIGGING_GUIDE.md) for the new winches, tracks, traveller, metal eyes and sail templates.
 
 ## Metal rods, pins and rigging
 
 The three mast sleeves use a continuous 2 mm brass core. Start with approximately 378 mm, including about 18 mm in the foot, and trim after dry fitting. The 120 mm boom uses a 1 mm core. The spreader collar sits about 190 mm above the mast foot; a 1 mm metal crossbar gives a finished spreader span of about 56 mm. Use fine model thread for the stays, including the two confirmed backstays. These rods and threads are assembly references in Blender's `DO NOT PRINT` collection, not exported parts.
 
-The rudder uses two short 0.8 mm metal pins, cut to fit and glued. The tiller heel sits between the silver yoke cheeks with roughly 0.25 mm side clearance per side. The bolt heads are decorative; this is a glued display assembly.
+The rudder uses two short 0.8 mm metal pins, cut to fit and glued. The tiller heel sits between the silver yoke cheeks with roughly 0.25 mm side clearance per side. A 0.8 mm cross-pin passes through the 0.9 mm bore in the yoke and tiller heel; trim it after dry fitting.
 
 The pulpit tubes are 1.4 mm in diameter, intentionally thickened at model scale. The bow pulpit and two forward stern-pushpit feet use 1.2 mm pins in 1.5 mm deck sockets. Eight small side plates—two on the upper stern pushpit and six on the lower guard—use 0.8 mm metal pins in 0.9 mm holes, with about 2.5 mm available depth into the hull. Dry-fit, trim pins and glue after hull finishing. The printed pulpits can also serve as references for making a metal-wire version.
 
 ## Verification and limitations
 
-All 42 exported meshes are closed, each with one connected component and positive volume. Export checks found no non-manifold edges or zero-area triangles. The nine new inserts have zero measured solid intersection with the upper deck. All ten plates sliced without warnings; the G-code color IDs were checked against the plate manifest. The project includes 48 instances, counting six extra test pieces.
+The current mesh inventory, triangle checks and plate checks are recorded in the delivery reports. Each printable part must be closed, connected and have positive volume. The 3MF is compared against the same final Blender export for geometry and colour consistency.
 
 No physical print has yet validated the fits, fine tubes, support removal or filament colors. Start with the fit tests. This is a display model reconstructed from photographs and available reference material, not a surveyed engineering model.
 

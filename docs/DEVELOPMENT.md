@@ -74,3 +74,5 @@ Make one focused commit for a model change and its complete print delivery. Pref
 A commit does not silently replace an existing release. Published tags and downloads remain fixed snapshots. When making a new public release, update `VERSION`, prepare and verify the delivery, commit it, create a new tag and package downloads from that exact commit. Refresh the README download links for that release.
 
 No automated check replaces the first physical test print. Keep fit, strength, real colour matching and support removal clearly marked as untested until demonstrated.
+
+Sail templates require the Python `reportlab` package. Preparation generates the four-page A4 PDF and cutting list from the rigging interface map stored in the final Blender scene. Only this original PDF is allowed in the public tree; reference scans remain private. Review the 100% calibration and tiled joins before promotion.

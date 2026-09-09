@@ -77,3 +77,9 @@ bpy.ops.wm.open_mainfile(filepath=str(ROOT/'source/base_geometry.blend'))
 assert not bpy.data.libraries and not bpy.data.texts, 'Remove linked data and notes from the base model'
 assert not any(i.packed_file or i.source=='FILE' for i in bpy.data.images), 'Remove reference images from the base model'
 print(f'Exported {len(checks)} parts from the final model; both Blender files passed privacy checks', flush=True)
+
+# Keep the rigging guide tied to the same saved model, including direct Blender edits.
+bpy.ops.wm.open_mainfile(filepath=str(ROOT / "build/Laurine_L28.blend"))
+rig=bpy.context.scene.get("rigging_json")
+if not rig: raise ValueError("Missing model rigging interface map")
+(ROOT / "build/rigging.json").write_text(rig)

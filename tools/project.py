@@ -25,8 +25,8 @@ def blender(script):
 
 def bundle():
     files = [BUILD / name for name in ['Laurine_L28.blend', 'print_layout.json', 'palette.json', 'model_check.json',
-             'project_check.json', 'plate_manifest.json', 'bambu/Laurine_Multicolor_A1.3mf', 'bambu/result.json']]
-    files += [p for d in ['stl', 'tests', 'colors', 'previews'] for p in (BUILD / d).rglob('*') if p.is_file()]
+             'project_check.json', 'plate_manifest.json', 'bambu/Laurine_Multicolor_A1.3mf', 'bambu/result.json', 'rigging.json']]
+    files += [p for d in ['stl', 'tests', 'colors', 'previews', 'sails'] for p in (BUILD / d).rglob('*') if p.is_file()]
     return {str(p.relative_to(BUILD)): hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(files)}
 
 
@@ -46,6 +46,7 @@ def prepare(from_source=False):
             shutil.copy2(ROOT / 'source' / name, BUILD / name)
     blender('export_final.py')
     blender('render_previews.py')
+    run([sys.executable, str(ROOT / 'tools/sail_patterns.py')])
     assembly = json.loads((ROOT / 'source/assembly.json').read_text())
     for plate in assembly['plates']:
         for obj in plate['objects']:
@@ -68,12 +69,12 @@ def promote():
     if candidate['baseline'] != delivery.hashes() or candidate['bundle'] != bundle():
         raise ValueError('Files changed since preparation; prepare and review again')
     # Replace complete directories so deleted parts cannot survive as stale exports.
-    for source, target in [('stl', 'print/stl'), ('tests', 'print/fit-tests'), ('colors', 'source/colors'), ('previews', 'docs/images')]:
+    for source, target in [('stl', 'print/stl'), ('tests', 'print/fit-tests'), ('colors', 'source/colors'), ('previews', 'docs/images'), ('sails', 'docs/sails')]:
         if (ROOT / target).exists():
             shutil.rmtree(ROOT / target)
         shutil.copytree(BUILD / source, ROOT / target)
     for source, target in [('Laurine_L28.blend', 'model/Laurine_L28.blend'), ('bambu/Laurine_Multicolor_A1.3mf', 'print/Laurine_Multicolor_A1.3mf'),
-                           ('print_layout.json', 'source/print_layout.json'), ('palette.json', 'source/palette.json'), ('plate_manifest.json', 'source/plate_manifest.json')]:
+                           ('print_layout.json', 'source/print_layout.json'), ('palette.json', 'source/palette.json'), ('plate_manifest.json', 'source/plate_manifest.json'), ('rigging.json', 'source/rigging.json')]:
         shutil.copy2(BUILD / source, ROOT / target)
     # Reports describe this delivery only, not previous generations.
     for path in (ROOT / 'reports').glob('*.json'):

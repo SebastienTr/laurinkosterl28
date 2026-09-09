@@ -16,7 +16,8 @@
       "ALIGNMENT_PIN_01",
       "COMPANIONWAY_CHANNEL_PORT",
       "COMPANIONWAY_CHANNEL_STARBOARD",
-      "MAST_DECK_SHOE"
+      "MAST_DECK_SHOE",
+      "TEST_RIGGING_EYES"
     ]
   },
   {
@@ -51,13 +52,11 @@
       "DISPLAY_CRADLE_2",
       "LOWER_WASHBOARD",
       "UPPER_WASHBOARD",
-      "WOOD_AFT_CROSSPIECE",
-      "WOOD_COAMING_CAP_PORT",
-      "WOOD_COAMING_CAP_STARBOARD",
       "WOOD_COCKPIT_TRIM",
       "WOOD_HANDRAIL_PORT",
       "WOOD_HANDRAIL_STARBOARD",
-      "WOOD_TILLER"
+      "WOOD_TILLER",
+      "WOOD_COAMING_ASSEMBLY"
     ]
   },
   {
@@ -87,7 +86,10 @@
     "parts": [
       "BOW_PULPIT",
       "STERN_PUSHPIT",
-      "LOWER_RUDDER_GUARD"
+      "LOWER_RUDDER_GUARD",
+      "GENOA_TRACK_PORT",
+      "GENOA_TRACK_STARBOARD",
+      "MAINSHEET_TRAVELLER"
     ]
   },
   {
@@ -99,7 +101,9 @@
       "WINDOW_PORT_1",
       "WINDOW_PORT_2",
       "WINDOW_STARBOARD_1",
-      "WINDOW_STARBOARD_2"
+      "WINDOW_STARBOARD_2",
+      "WINCH_PORT",
+      "WINCH_STARBOARD"
     ]
   },
   {

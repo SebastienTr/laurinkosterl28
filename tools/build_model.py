@@ -179,20 +179,13 @@ for side in (-1,1):
 boolean(hull,cyl('Panneau avant rond',(89,0,37.8),(89,0,40.4),8.5,cream),'UNION')
 # Eyelet pilot holes for metal wire loops. Positions are inherited from interpreted V07 rig.
 anchors=[]
-for name,me in source.items():
- if name.startswith('Cadène') and 'pataras' not in name:
-  p=sum((v.co for v in me.vertices),Vector())/len(me.vertices);z=min(v.co.z for v in me.vertices)
-  # keep bow anchor off the point of the stem
-  if 'étai' in name:p.x=10;z=34
-  cut_hole(hull,(p.x,p.y,z-4),(p.x,p.y,z+2),.4)
-  anchors.append({'name':name,'position_mm':[round(p.x,3),round(p.y,3),round(z,3)],'pilot_diameter_mm':.8})
 # Twin backstays: confirmed by owner; detailed head attachment remains an estimate.
 backstays=[]
 for side,label in [(-1,'TRIBORD'),(1,'BABORD')]:
  hit,p,n,idx=hull.ray_cast(Vector((264,side*13,100)),Vector((0,0,-1)))
  if not hit:raise RuntimeError('Backstay anchor outside hull')
  cut_hole(hull,p-Vector((0,0,4)),p+Vector((0,0,1)),.4)
- end=p+Vector((0,0,.6));head=Vector((114,side*.5,399))
+ end=p+Vector((0,0,.6));head=Vector((112.15,side*1.6,396))
  cyl('FIL — PATARAS_'+label,end,head,.10,dark,collection=ref)
  backstays.append({'side':label,'foot':list(end),'head':list(head),'material':'fil de maquettisme, non imprimé'})
 (R/'pataras.json').write_text(json.dumps(backstays,ensure_ascii=False,indent=2))
@@ -348,9 +341,10 @@ for side in (-1,1):
  boolean(rudder,cheek,'UNION')
 # Crosspiece below the timber joins both cheeks to the rudder head.
 boolean(rudder,box('Fond de chape',(hx-2.5,0,35.9),(8.2,5.1,1.0),silver),'UNION')
-# Bolt heads, represented as short metal discs; the connection is glued, not articulated.
+# A real cross-pin locates the tiller heel between the compact cheeks.
 for side in (-1,1):
  boolean(rudder,cyl('Tête axe barre',(hx-1.5,side*2.45,37.4),(hx-1.5,side*2.9,37.4),.8,silver,n=24),'UNION')
+cut_hole(rudder,(hx-1.5,-4,37.4),(hx-1.5,4,37.4),.45)
 vs=[];fs=[];N=48;K=32
 for i in range(N+1):
  t=i/N;p=headtop+Vector((-42*t,0,1.5+3.0*math.sin(math.pi*t/2)))
@@ -364,13 +358,23 @@ for i in range(N):
 fs += [tuple(range(K-1,-1,-1)),tuple(N*K+j for j in range(K))]
 tiller=mesh('BARRE_FRANCHE_BOIS',vs,fs,wood)
 for p in tiller.data.polygons:p.use_smooth=len(p.vertices)==4
+cut_hole(tiller,(hx-1.5,-4,37.4),(hx-1.5,4,37.4),.45)
 register(tiller,Matrix.Rotation(math.pi/2,4,'X'))
 # Curved wood caps follow the V07 coamings, thickened for the miniature.
+wood_caps=[]
 for label in ('tribord','bâbord'):
  o=obj('COURONNEMENT_BOIS_'+('TRIBORD' if label=='tribord' else 'BABORD'),source['Couronnement bois • '+label].copy(),material=wood)
  for v in o.data.vertices:v.co += v.normal*.25
- register(o)
-rear=box('TRAVERSE_BOIS_ARRIERE',(252.33,0,30.2),(2.0,29.3,1.5),wood);register(rear)
+ wood_caps.append(o)
+rear=box('WOOD_COAMING_ASSEMBLY',(252.33,0,30.2),(2.0,35.0,1.5),wood)
+for cap in wood_caps:
+ end=max((v.co for v in cap.data.vertices),key=lambda p:p.x)
+ side=1 if end.y>0 else -1
+ bridge=box('Timber corner joint',((end.x+252.33)/2,side*17.5,30.2),(252.33-end.x+2.0,3.2,1.5),wood)
+ active(bridge);bevel=bridge.modifiers.new('Rounded timber corner','BEVEL');bevel.width=.25;bevel.segments=4
+ bpy.ops.object.modifier_apply(modifier=bevel.name)
+ boolean(rear,bridge,'UNION');boolean(rear,cap,'UNION')
+register(rear)
 # U-shaped trim seen on aft cockpit wall, placed above the well floor.
 trim=box('ENCADREMENT_BOIS_COCKPIT',(249.7,0,20.3),(1.2,10,1.2),wood)
 for side in (-1,1):boolean(trim,box('Montant',(249.7,side*4.4,23.0),(1.2,1.2,6.6),wood),'UNION')
@@ -405,6 +409,111 @@ saddle=box('SUPPORT_BOME',(108.9,0,74),(6.5,6,6),silver)
 cut_hole(saddle,(105.9,0,60),(105.9,0,90),2.85)
 cut_hole(saddle,(108,0,74),(115,0,74.05),.7)
 register(saddle)
+# Small fittings are functional model interfaces, dimensioned in millimetres.
+rig_points={};rig_routes=[]
+def deck_eye(label,x,y):
+ hit,p,n,idx=hull.ray_cast(Vector((x,y,100)),Vector((0,0,-1)))
+ if not hit:raise RuntimeError('Deck eye misses surface: '+label)
+ cut_hole(hull,p-Vector((0,0,3)),p+Vector((0,0,1)),.4)
+ rig_points[label]=list(p+Vector((0,0,1.5)))
+ return p
+# Keep the existing chainplate pilot holes; sample their true deck heights.
+for i,anchor in enumerate(anchors):
+ x,y,z=anchor['position_mm'];deck_eye('CHAINPLATE_'+str(i+1),x,y)
+for side,label in [(-1,'STARBOARD'),(1,'PORT')]:
+ deck_eye('BACKSTAY_'+label,264,side*13)
+ deck_eye('HALYARD_'+label,110,side*11)
+ deck_eye('VANG_DECK_'+label,111,side*7)
+# Explicit fore/aft lower shrouds and cap shrouds: a consistent, symmetric thread plan.
+for side,label in [(-1,'STARBOARD'),(1,'PORT')]:
+ for role,x in [('LOWER_FORWARD',94),('CAP_SHROUD',112),('LOWER_AFT',130)]:
+  deck_eye(role+'_'+label,x,side*32)
+deck_eye('FORESTAY',10,0)
+# Paired cockpit winches, seated on the coaming, with integral pins.
+for side,label in [(-1,'STARBOARD'),(1,'PORT')]:
+ x,y=200,side*25
+ hit,p,n,idx=hull.ray_cast(Vector((x,y,100)),Vector((0,0,-1)))
+ if not hit:raise RuntimeError('Winch misses coaming')
+ # A small timber backing pad keeps the curved cap connected around the socket.
+ local_top=max(v.co.z for v in rear.data.vertices if abs(v.co.x-x)<3 and abs(v.co.y-y)<3)
+ top=max(p.z+1.2,local_top+.2)
+ boolean(rear,cyl('Winch timber backing',p-Vector((0,0,.1)),(x,y,top),2.7,wood),'UNION')
+ cut_hole(rear,(x,y,top-2),(x,y,top+1),.75)
+ p=Vector((x,y,top+.1))
+ win=cyl('WINCH_'+label,p+Vector((0,0,.1)),p+Vector((0,0,1.1)),2.5,dark)
+ boolean(win,cyl('Winch drum',p+Vector((0,0,.8)),p+Vector((0,0,4.4)),1.8,dark),'UNION')
+ boolean(win,cyl('Winch crown',p+Vector((0,0,4.1)),p+Vector((0,0,4.8)),2.25,dark),'UNION')
+ boolean(win,cyl('Winch locating pin',p-Vector((0,0,1.8)),p+Vector((0,0,.5)),.6,dark),'UNION')
+ cut_hole(hull,p-Vector((0,0,2)),p+Vector((0,0,.5)),.75)
+ cut_hole(win,p+Vector((0,0,3.4)),p+Vector((0,0,5)),.5)
+ register(win);rig_points['WINCH_'+label]=list(p+Vector((0,0,2.8)))
+# Short genoa tracks with a fixed car. Eyes are wire loops in blind pilot holes.
+for side,label in [(-1,'STARBOARD'),(1,'PORT')]:
+ x,y=171,side*31
+ hit,p,n,idx=hull.ray_cast(Vector((x,y,100)),Vector((0,0,-1)))
+ track=box('GENOA_TRACK_'+label,(x,y,p.z+1.6),(24,1.8,1.5),silver)
+ for tx in (162,180):
+  hit,q,n,idx=hull.ray_cast(Vector((tx,y,100)),Vector((0,0,-1)))
+  boolean(track,cyl('Track pedestal',q,(tx,y,p.z+1.7),1.2,silver),'UNION')
+  boolean(track,cyl('Track pin',q-Vector((0,0,1.8)),q+Vector((0,0,.4)),.6,silver),'UNION')
+  cut_hole(hull,q-Vector((0,0,2)),q+Vector((0,0,.5)),.75)
+ boolean(track,box('Genoa car',(x,y,p.z+2.7),(3.2,2.6,1.4),silver),'UNION')
+ cut_hole(track,(x,y,p.z+1),(x,y,p.z+4),.4)
+ boolean(track,dup(hull,'Deck contact trim'))
+ register(track);rig_points['GENOA_CAR_'+label]=[x,y,p.z+4.5]
+# Traveller lies aft across the cockpit below the tiller, as in the close-up.
+trav=box('MAINSHEET_TRAVELLER',(252.33,0,31.7),(2.0,31,1.4),silver)
+for side in (-1,1):
+ boolean(trav,cyl('Traveller pin',(252.33,side*12,30.0),(252.33,side*12,31.4),.45,silver),'UNION')
+ cut_hole(rear,(252.33,side*12,29.8),(252.33,side*12,32),.575)
+boolean(trav,box('Mainsheet car',(252.33,0,32.8),(3,3.6,1.3),silver),'UNION')
+cut_hole(trav,(252.33,0,31.2),(252.33,0,35),.4)
+register(trav);rig_points['MAINSHEET_CAR']=[252.33,0,34.5]
+# Blind holes in external lugs avoid the metal cores through the spars.
+def spar_eye(owner,label,point):
+ p=Vector(point)
+ lug=box('External rigging lug',p,(3.2,3.2,3.2),silver)
+ active(lug);bevel=lug.modifiers.new('Rounded eye tab','BEVEL');bevel.width=.4;bevel.segments=4
+ bpy.ops.object.modifier_apply(modifier=bevel.name)
+ boolean(owner,lug,'UNION')
+ cut_hole(owner,p-Vector((0,2.2,0)),p+Vector((0,2.2,0)),.5)
+ rig_points[label]=list(p)
+for label,x,z in [('MASTHEAD_FORWARD',106.4,396),('MASTHEAD_AFT',112.6,396)]:
+ spar_eye(bpy.data.objects['MAT_3'],label,(x,0,z))
+for label,x,z in [('LOWER_SHROUDS',110.7,224),('MAIN_TACK',109.6,79)]:
+ spar_eye(bpy.data.objects['MAT_2' if z>160 else 'MAT_1'],label,(x,0,z))
+for label,x,z in [('BOOM_TACK',113,77.0),('BOOM_CLEW',225,77.8),('BOOM_SHEET',225,71.8),('BOOM_VANG',139,71.2)]:
+ spar_eye(bpy.data.objects['BOME'],label,(x,0,z))
+rig_points['SPREADER_PORT']=[sp.x+4,28,sp.z]
+rig_points['SPREADER_STARBOARD']=[sp.x+4,-28,sp.z]
+# Metal eyelets shown at every deck/car attachment; install from 0.3 mm wire.
+for label,coords in rig_points.items():
+ if label.startswith(('MAST','LOWER_SHROUDS','BOOM','MAIN_TACK','SPREADER','WINCH')):continue
+ p=Vector(coords)
+ curve=[tuple(p+Vector((.7*math.cos(j*2*math.pi/32),0,.7*math.sin(j*2*math.pi/32)))) for j in range(33)]
+ eye=curved_tube('EYELET_'+label,curve,r=.15,trim=.05)
+ col.objects.unlink(eye);ref.objects.link(eye)
+ cyl('Eyelet stem',p-Vector((0,0,2.8)),p-Vector((0,0,.6)),.15,silver,collection=ref)
+# Replace the legacy floating rig lines with point-to-point assembly references.
+for ob in list(ref.objects):
+ if ob.name.startswith('FIL'):bpy.data.objects.remove(ob,do_unlink=True)
+def route(label,names):
+ coords=[rig_points[n] for n in names]
+ for a,b in zip(coords,coords[1:]):cyl('THREAD_'+label,a,b,.08,dark,collection=ref)
+ rig_routes.append({'name':label,'points':names,'cut_length_mm':math.ceil(sum((Vector(b)-Vector(a)).length for a,b in zip(coords,coords[1:]))+40)})
+route('FORESTAY',['FORESTAY','MASTHEAD_FORWARD'])
+for label in ('PORT','STARBOARD'):
+ route('BACKSTAY_'+label,['BACKSTAY_'+label,'MASTHEAD_AFT'])
+ route('CAP_SHROUD_'+label,['CAP_SHROUD_'+label,'SPREADER_'+label,'MASTHEAD_AFT'])
+ for role in ('LOWER_FORWARD','LOWER_AFT'):route(role+'_'+label,[role+'_'+label,'LOWER_SHROUDS'])
+route('MAINSHEET',['BOOM_SHEET','MAINSHEET_CAR','BOOM_SHEET','MAINSHEET_CAR'])
+route('VANG',['BOOM_VANG','VANG_DECK_PORT'])
+# A representative eyelet coupon: reopen pilot holes with a hand pin vice after printing.
+coupon=box('TEST_RIGGING_EYES',(60,65,2),(22,10,4),cream)
+for x,diam in [(53,.7),(60,.8),(67,.9)]:cut_hole(coupon,(x,65,1),(x,65,5),diam/2)
+register(coupon,test=True)
+sc['rigging_json']=json.dumps({'scale':30,'points_mm':rig_points,'routes':rig_routes,'wire_diameter_mm':.3,'thread_diameter_mm':[.15,.25]})
+(R/'rigging.json').write_text(sc['rigging_json'])
 # Only actual remaining interfaces have specimens; no hull cut or alignment dowel.
 cp=box('ESSAI_TIGE_MAT',(15,60,3),(30,14,6),cream)
 for x,d in [(6,2.2),(15,2.3),(24,2.4)]:cut_hole(cp,(x,60,-1),(x,60,7),d/2)
@@ -422,10 +531,6 @@ for i,x in enumerate((80,210)):
  boolean(foot,cutter)
  # Cut space below side hull leaving supportive V profile; add keel support kept in remaining mesh.
  register(foot,Matrix.Rotation(math.pi/2,4,'Y'))
-# Original rig lines for visual placement only, not printable output.
-for name,me in source.items():
- if name.startswith(('Grand hauban','Bas-hauban','Étai avant','Balancine','Hale-bas •','Écoute de grand-voile','Drisse •')):
-  o=obj('FIL — '+name,me.copy(),ref,dark)
 # Owner-authorized horizontal separation, after all original interfaces are generated.
 # Z=17 is 1.6 mm below the lowest hull/deck colour boundary (about 18.6 mm).
 CUT_Z=17.0
@@ -459,8 +564,10 @@ for label,h in palette:
  printmats.append(mat('PLA — '+label,tuple(srgb_linear(v) for v in rgb)))
 def choose_color(ob,face,oldname):
  c=face.center;name=ob.name
- if name.startswith('WINDOW_'):return 6
- if name.startswith(('COMPANIONWAY_CHANNEL_','HATCH_RAIL_','MAST_DECK_SHOE')):return 5
+ if name.startswith(('WINDOW_','WINCH_')):return 6
+ if name.startswith(('WOOD_','BARRE_FRANCHE_BOIS')):return 4
+ if name.startswith('TEST_'):return 1
+ if name.startswith(('COMPANIONWAY_CHANNEL_','HATCH_RAIL_','MAST_DECK_SHOE','GENOA_TRACK_','MAINSHEET_TRAVELLER')):return 5
  if name.startswith('ESSAI') or name.startswith('PION'):return 1
  if name.startswith('BER'):return 4
  if name=='PONT_SUPERIEUR' and 'aluminium' in oldname:return 1

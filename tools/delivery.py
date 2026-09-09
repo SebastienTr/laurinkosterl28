@@ -8,7 +8,7 @@ import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
 RECEIPT = 'reports/delivery.json'
-WATCHED = ('source/', 'model/', 'print/', 'profiles/', 'tools/', 'reports/', 'docs/images/', '.githooks/', '.github/')
+WATCHED = ('source/', 'model/', 'print/', 'profiles/', 'tools/', 'reports/', 'docs/images/', 'docs/sails/', '.githooks/', '.github/')
 ROOT_FILES = {'README.md', 'AGENTS.md', 'VERSION', '.gitignore', '.gitattributes', 'LICENSE', 'CHANGELOG.md'}
 DIRECTORIES = {'source', 'model', 'print', 'profiles', 'tools', 'reports', 'docs', '.githooks', '.github'}
 
@@ -45,8 +45,10 @@ def check_public_paths(root, staged=False):
                 raise ValueError(f'Unexpected file at repository root: {path}')
         elif p.parts[0] not in DIRECTORIES:
             raise ValueError(f'Private, temporary or unexpected directory staged: {path}')
-        if p.suffix.lower() in {'.tmp', '.log', '.bak', '.zip', '.mp4', '.jpeg', '.jpg', '.pdf', '.pyc'} or re.search(r'\.blend\d+$', p.name) or p.name.startswith('.env') or '__pycache__' in p.parts:
+        if p.suffix.lower() in {'.tmp', '.log', '.bak', '.zip', '.mp4', '.jpeg', '.jpg', '.pyc'} or re.search(r'\.blend\d+$', p.name) or p.name.startswith('.env') or '__pycache__' in p.parts:
             raise ValueError(f'Temporary or reference file in the public tree: {path}')
+        if p.suffix.lower() == '.pdf' and path != 'docs/sails/Laurine_Sails_1-30.pdf':
+            raise ValueError(f'Only the generated sail template PDF may be public: {path}')
         if p.suffix == '.png' and not path.startswith('docs/images/'):
             raise ValueError(f'Public renders belong in docs/images/: {path}')
         if not staged and (root / path).is_symlink():

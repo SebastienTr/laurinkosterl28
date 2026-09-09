@@ -1,5 +1,5 @@
 {
-  "model_sha256": "6761b0c3743feb0d12a8962e1b8ced5f1702dd8287470e0212bc9721edd47d7b",
+  "model_sha256": "4f729290e5345ec4b6eba73a744b7e86ba7f56399b59b8792713a1d558c6a5bb",
   "private_images": 0,
   "embedded_notes": 0,
   "linked_libraries": 0,
@@ -160,7 +160,7 @@
     },
     {
       "part": "WOOD_TILLER",
-      "triangles": 3132,
+      "triangles": 3324,
       "non_manifold_edges": 0,
       "connected_components": 1,
       "dimensions_mm": [
@@ -170,36 +170,14 @@
       ]
     },
     {
-      "part": "WOOD_COAMING_CAP_STARBOARD",
-      "triangles": 2428,
+      "part": "WOOD_COAMING_ASSEMBLY",
+      "triangles": 6306,
       "non_manifold_edges": 0,
       "connected_components": 1,
       "dimensions_mm": [
-        52.54597,
-        9.58461,
-        5.60642
-      ]
-    },
-    {
-      "part": "WOOD_COAMING_CAP_PORT",
-      "triangles": 2428,
-      "non_manifold_edges": 0,
-      "connected_components": 1,
-      "dimensions_mm": [
-        52.52078,
-        9.57246,
+        57.76534,
+        55.4,
         5.60648
-      ]
-    },
-    {
-      "part": "WOOD_AFT_CROSSPIECE",
-      "triangles": 12,
-      "non_manifold_edges": 0,
-      "connected_components": 1,
-      "dimensions_mm": [
-        2.0,
-        29.3,
-        1.5
       ]
     },
     {
@@ -215,7 +193,7 @@
     },
     {
       "part": "RUDDER",
-      "triangles": 2862,
+      "triangles": 3194,
       "non_manifold_edges": 0,
       "connected_components": 1,
       "dimensions_mm": [
@@ -259,46 +237,46 @@
     },
     {
       "part": "MAST_1",
-      "triangles": 512,
+      "triangles": 1052,
       "non_manifold_edges": 0,
       "connected_components": 1,
       "dimensions_mm": [
         120.34427,
         4.0,
-        6.83243
+        8.28282
       ]
     },
     {
       "part": "MAST_2",
-      "triangles": 512,
+      "triangles": 984,
       "non_manifold_edges": 0,
       "connected_components": 1,
       "dimensions_mm": [
         120.29425,
         4.0,
-        6.83189
+        8.04894
       ]
     },
     {
       "part": "MAST_3",
-      "triangles": 512,
+      "triangles": 1484,
       "non_manifold_edges": 0,
       "connected_components": 1,
       "dimensions_mm": [
         120.34424,
         4.0,
-        6.83244
+        9.39999
       ]
     },
     {
       "part": "BOOM",
-      "triangles": 384,
+      "triangles": 2594,
       "non_manifold_edges": 0,
       "connected_components": 1,
       "dimensions_mm": [
         120.03133,
         3.2,
-        5.49989
+        9.8
       ]
     },
     {
@@ -321,6 +299,61 @@
         6.5,
         6.0,
         6.0
+      ]
+    },
+    {
+      "part": "WINCH_STARBOARD",
+      "triangles": 796,
+      "non_manifold_edges": 0,
+      "connected_components": 1,
+      "dimensions_mm": [
+        5.0,
+        5.0,
+        6.6
+      ]
+    },
+    {
+      "part": "WINCH_PORT",
+      "triangles": 796,
+      "non_manifold_edges": 0,
+      "connected_components": 1,
+      "dimensions_mm": [
+        5.0,
+        5.0,
+        6.6
+      ]
+    },
+    {
+      "part": "GENOA_TRACK_STARBOARD",
+      "triangles": 1078,
+      "non_manifold_edges": 0,
+      "connected_components": 1,
+      "dimensions_mm": [
+        24.0,
+        2.6,
+        5.35878
+      ]
+    },
+    {
+      "part": "GENOA_TRACK_PORT",
+      "triangles": 1078,
+      "non_manifold_edges": 0,
+      "connected_components": 1,
+      "dimensions_mm": [
+        24.0,
+        2.6,
+        5.35879
+      ]
+    },
+    {
+      "part": "MAINSHEET_TRAVELLER",
+      "triangles": 524,
+      "non_manifold_edges": 0,
+      "connected_components": 1,
+      "dimensions_mm": [
+        3.0,
+        31.0,
+        3.45
       ]
     },
     {
@@ -413,13 +446,24 @@
     },
     {
       "part": "UPPER_DECK",
-      "triangles": 396608,
+      "triangles": 398394,
       "non_manifold_edges": 0,
       "connected_components": 1,
       "dimensions_mm": [
         198.59839,
         198.59842,
         23.4
+      ]
+    },
+    {
+      "part": "TEST_RIGGING_EYES",
+      "triangles": 492,
+      "non_manifold_edges": 0,
+      "connected_components": 1,
+      "dimensions_mm": [
+        22.0,
+        10.0,
+        4.0
       ]
     },
     {

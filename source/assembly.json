@@ -89,6 +89,14 @@
             5
           ],
           "print_params": {}
+        },
+        {
+          "path": "print/fit-tests/TEST_RIGGING_EYES.stl",
+          "count": 1,
+          "filaments": [
+            1
+          ],
+          "print_params": {}
         }
       ]
     },
@@ -169,30 +177,6 @@
           "print_params": {}
         },
         {
-          "path": "print/stl/WOOD_AFT_CROSSPIECE.stl",
-          "count": 1,
-          "filaments": [
-            4
-          ],
-          "print_params": {}
-        },
-        {
-          "path": "print/stl/WOOD_COAMING_CAP_PORT.stl",
-          "count": 1,
-          "filaments": [
-            4
-          ],
-          "print_params": {}
-        },
-        {
-          "path": "print/stl/WOOD_COAMING_CAP_STARBOARD.stl",
-          "count": 1,
-          "filaments": [
-            4
-          ],
-          "print_params": {}
-        },
-        {
           "path": "print/stl/WOOD_COCKPIT_TRIM.stl",
           "count": 1,
           "filaments": [
@@ -218,6 +202,14 @@
         },
         {
           "path": "print/stl/WOOD_TILLER.stl",
+          "count": 1,
+          "filaments": [
+            4
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/stl/WOOD_COAMING_ASSEMBLY.stl",
           "count": 1,
           "filaments": [
             4
@@ -353,6 +345,30 @@
             5
           ],
           "print_params": {}
+        },
+        {
+          "path": "print/stl/GENOA_TRACK_PORT.stl",
+          "count": 1,
+          "filaments": [
+            5
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/stl/GENOA_TRACK_STARBOARD.stl",
+          "count": 1,
+          "filaments": [
+            5
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/stl/MAINSHEET_TRAVELLER.stl",
+          "count": 1,
+          "filaments": [
+            5
+          ],
+          "print_params": {}
         }
       ]
     },
@@ -389,6 +405,22 @@
         },
         {
           "path": "print/stl/WINDOW_STARBOARD_2.stl",
+          "count": 1,
+          "filaments": [
+            6
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/stl/WINCH_PORT.stl",
+          "count": 1,
+          "filaments": [
+            6
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/stl/WINCH_STARBOARD.stl",
           "count": 1,
           "filaments": [
             6

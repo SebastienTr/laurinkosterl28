@@ -1,33 +1,33 @@
 {
-  "parts": 42,
+  "parts": 46,
   "plates": 10,
-  "instances": 48,
+  "instances": 52,
   "geometry_and_colours_match": true,
   "gcode_checksums_valid": true,
   "slicing_successful": true,
   "plate_details": [
     {
       "plate": "01 Fit tests",
-      "instances": 10,
-      "seconds": 6798.5068359375,
+      "instances": 11,
+      "seconds": 6986.7919921875,
       "filaments": [
         {
           "filament_id": "GFL99",
           "id": 1,
-          "main_used_g": 7.058504104614258,
-          "total_used_g": 14.264409065246582
+          "main_used_g": 7.950854778289795,
+          "total_used_g": 15.156760215759277
         },
         {
           "filament_id": "GFL99",
           "id": 4,
-          "main_used_g": 0.8270080089569092,
-          "total_used_g": 2.460315704345703
+          "main_used_g": 0.822083055973053,
+          "total_used_g": 2.455390691757202
         },
         {
           "filament_id": "GFL99",
           "id": 5,
-          "main_used_g": 0.8896399736404419,
-          "total_used_g": 6.342114448547363
+          "main_used_g": 0.8762717843055725,
+          "total_used_g": 6.328746318817139
         }
       ],
       "parts": [
@@ -40,7 +40,8 @@
         "ALIGNMENT_PIN_01",
         "COMPANIONWAY_CHANNEL_PORT",
         "COMPANIONWAY_CHANNEL_STARBOARD",
-        "MAST_DECK_SHOE"
+        "MAST_DECK_SHOE",
+        "TEST_RIGGING_EYES"
       ],
       "colours": [
         1,
@@ -51,25 +52,25 @@
     {
       "plate": "02 Lower hull",
       "instances": 1,
-      "seconds": 28905.341796875,
+      "seconds": 28941.607421875,
       "filaments": [
         {
           "filament_id": "GFL99",
           "id": 1,
-          "main_used_g": 23.742698669433594,
+          "main_used_g": 23.74270248413086,
           "total_used_g": 53.99100112915039
         },
         {
           "filament_id": "GFL99",
           "id": 2,
-          "main_used_g": 45.96986770629883,
-          "total_used_g": 62.43308639526367
+          "main_used_g": 45.96977996826172,
+          "total_used_g": 62.43299865722656
         },
         {
           "filament_id": "GFL99",
           "id": 3,
-          "main_used_g": 44.66140365600586,
-          "total_used_g": 44.93971252441406
+          "main_used_g": 44.66130447387695,
+          "total_used_g": 44.93960952758789
         },
         {
           "filament_id": "GFL99",
@@ -91,19 +92,19 @@
     {
       "plate": "03 Upper deck",
       "instances": 1,
-      "seconds": 28433.025390625,
+      "seconds": 28628.80859375,
       "filaments": [
         {
           "filament_id": "GFL99",
           "id": 1,
-          "main_used_g": 73.10420989990234,
-          "total_used_g": 110.88507080078125
+          "main_used_g": 73.49201202392578,
+          "total_used_g": 111.27287292480469
         },
         {
           "filament_id": "GFL99",
           "id": 2,
-          "main_used_g": 13.162679672241211,
-          "total_used_g": 30.251882553100586
+          "main_used_g": 13.199338912963867,
+          "total_used_g": 30.28853988647461
         }
       ],
       "parts": [
@@ -116,14 +117,14 @@
     },
     {
       "plate": "04 Wood and display cradles",
-      "instances": 11,
-      "seconds": 5073.50341796875,
+      "instances": 9,
+      "seconds": 5200.34716796875,
       "filaments": [
         {
           "filament_id": "GFL99",
           "id": 4,
-          "main_used_g": 33.20957946777344,
-          "total_used_g": 33.20957946777344
+          "main_used_g": 33.44792175292969,
+          "total_used_g": 33.44792175292969
         }
       ],
       "parts": [
@@ -131,13 +132,11 @@
         "DISPLAY_CRADLE_2",
         "LOWER_WASHBOARD",
         "UPPER_WASHBOARD",
-        "WOOD_AFT_CROSSPIECE",
-        "WOOD_COAMING_CAP_PORT",
-        "WOOD_COAMING_CAP_STARBOARD",
         "WOOD_COCKPIT_TRIM",
         "WOOD_HANDRAIL_PORT",
         "WOOD_HANDRAIL_STARBOARD",
-        "WOOD_TILLER"
+        "WOOD_TILLER",
+        "WOOD_COAMING_ASSEMBLY"
       ],
       "colours": [
         4
@@ -146,13 +145,13 @@
     {
       "plate": "05 Metal deck fittings and spars",
       "instances": 11,
-      "seconds": 3852.61767578125,
+      "seconds": 4579.7822265625,
       "filaments": [
         {
           "filament_id": "GFL99",
           "id": 5,
-          "main_used_g": 12.16321849822998,
-          "total_used_g": 12.16321849822998
+          "main_used_g": 15.442663192749023,
+          "total_used_g": 15.442663192749023
         }
       ],
       "parts": [
@@ -174,20 +173,23 @@
     },
     {
       "plate": "06 Pulpits and rudder guard",
-      "instances": 3,
-      "seconds": 4584.89990234375,
+      "instances": 6,
+      "seconds": 4968.4267578125,
       "filaments": [
         {
           "filament_id": "GFL99",
           "id": 5,
-          "main_used_g": 13.38708209991455,
-          "total_used_g": 13.38708209991455
+          "main_used_g": 14.364147186279297,
+          "total_used_g": 14.364147186279297
         }
       ],
       "parts": [
         "BOW_PULPIT",
         "STERN_PUSHPIT",
-        "LOWER_RUDDER_GUARD"
+        "LOWER_RUDDER_GUARD",
+        "GENOA_TRACK_PORT",
+        "GENOA_TRACK_STARBOARD",
+        "MAINSHEET_TRAVELLER"
       ],
       "colours": [
         5
@@ -195,21 +197,23 @@
     },
     {
       "plate": "07 Window inserts",
-      "instances": 4,
-      "seconds": 972.9523315429688,
+      "instances": 6,
+      "seconds": 1182.07958984375,
       "filaments": [
         {
           "filament_id": "GFL99",
           "id": 6,
-          "main_used_g": 2.4732251167297363,
-          "total_used_g": 2.4732251167297363
+          "main_used_g": 2.8168461322784424,
+          "total_used_g": 2.8168461322784424
         }
       ],
       "parts": [
         "WINDOW_PORT_1",
         "WINDOW_PORT_2",
         "WINDOW_STARBOARD_1",
-        "WINDOW_STARBOARD_2"
+        "WINDOW_STARBOARD_2",
+        "WINCH_PORT",
+        "WINCH_STARBOARD"
       ],
       "colours": [
         6
@@ -241,25 +245,25 @@
     {
       "plate": "09 Rudder and tiller fitting",
       "instances": 1,
-      "seconds": 6273.19921875,
+      "seconds": 6281.94482421875,
       "filaments": [
         {
           "filament_id": "GFL99",
           "id": 2,
-          "main_used_g": 0.4486388862133026,
-          "total_used_g": 5.014281272888184
+          "main_used_g": 0.44864094257354736,
+          "total_used_g": 5.014283180236816
         },
         {
           "filament_id": "GFL99",
           "id": 3,
-          "main_used_g": 1.6380423307418823,
+          "main_used_g": 1.6380420923233032,
           "total_used_g": 6.204460620880127
         },
         {
           "filament_id": "GFL99",
           "id": 5,
-          "main_used_g": 1.5583131313323975,
-          "total_used_g": 7.832420825958252
+          "main_used_g": 1.5854510068893433,
+          "total_used_g": 7.859558582305908
         },
         {
           "filament_id": "GFL99",
