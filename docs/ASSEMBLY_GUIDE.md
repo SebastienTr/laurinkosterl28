@@ -60,7 +60,7 @@ See the [rigging and sail guide](RIGGING_GUIDE.md) for the new winches, tracks, 
 
 ## Metal rods, pins and rigging
 
-The three mast sleeves use a continuous 2 mm brass core. Start with approximately 378 mm, including about 18 mm in the foot, and trim after dry fitting. The 120 mm boom uses a 1 mm core. The spreader collar sits about 190 mm above the mast foot; a 1 mm metal crossbar gives a finished spreader span of about 56 mm. Use fine model thread for the stays, including the two confirmed backstays. These rods and threads are assembly references in Blender's `DO NOT PRINT` collection, not exported parts.
+The mast has two sleeves, approximately 190 mm and 171 mm long, instead of three short sections. Their single 0.1 mm butt joint sits inside the spreader collar, 190 mm along the mast from its foot. Both sleeves slide over one continuous 2 mm brass core. The mast section is 5.5 × 4.8 mm around a nominal 2.3 mm bore, giving 1.25 mm minimum nominal sidewall thickness. Start with approximately 378 mm, including about 18 mm in the foot, and trim after dry fitting. The 120 mm boom remains one piece, with a 4.7 × 4 mm section and a 1.8 mm bore for a 1.5 mm metal core. Its minimum nominal sidewall thickness is 1.1 mm. The sleeves and boom are printed lying diagonally on plate 05. Dry-fit and slide the collar onto the upper sleeve from its lower end before joining the mast sleeves; the masthead tabs prevent fitting it from above. Keep the joint aligned while the glue cures. Do not tension the rig without the continuous metal cores installed. The spreader collar sits about 190 mm above the mast foot; a 1 mm metal crossbar gives a finished spreader span of about 56 mm. Use fine model thread for the stays, including the two confirmed backstays. These rods and threads are assembly references in Blender's `DO NOT PRINT` collection, not exported parts.
 
 The rudder uses two short 0.8 mm metal pins, cut to fit and glued. The tiller heel sits between the silver yoke cheeks with roughly 0.25 mm side clearance per side. A 0.8 mm cross-pin passes through the 0.9 mm bore in the yoke and tiller heel; trim it after dry fitting.
 
@@ -73,3 +73,5 @@ The current mesh inventory, triangle checks and plate checks are recorded in the
 No physical print has yet validated the fits, fine tubes, support removal or filament colors. Start with the fit tests. This is a display model reconstructed from photographs and available reference material, not a surveyed engineering model.
 
 [Back to the boat](../README.md)
+
+![The mast sleeve joint hidden inside the spreader collar](images/mast_joint.png)

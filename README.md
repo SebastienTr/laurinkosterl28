@@ -33,19 +33,19 @@ The long-keel hull stays in one full-length piece. The deck lifts off horizontal
 
 ![Hull and deck separated, with concealed alignment pins](docs/images/exploded_hull_and_deck.png)
 
-The windows, timber details and stainless-coloured fittings are separate pieces. That makes finishing easier and keeps glue away from the visible surfaces. The companionway has two wooden washboards and a sliding hatch. The rig has twin backstays.
+The windows, timber details and stainless-coloured fittings are separate pieces. That makes finishing easier and keeps glue away from the visible surfaces. The companionway has two wooden washboards and a sliding hatch. The rig has twin backstays. Two longer mast sleeves meet inside the spreader collar around a continuous 2 mm metal core; the one-piece boom takes a 1.5 mm core. Both have thicker sidewalls and lie diagonally on their printing plate.
 
 ![Separate window inserts, hatch rails and companionway fittings](docs/images/removable_details_exploded.png)
 
 ## What you will need
 
 - A filament printer, **1.75 mm PLA**, and the seven colours in the [colour guide](docs/FILAMENT_SHOPPING_LIST.md). Every plate uses at most four colours at once.
-- **2 mm and 1 mm metal rod**, plus **0.8 mm pins**, for the spars and small fittings.
+- **2 mm, 1.5 mm and 1 mm metal rod**, plus **0.8 mm pins**, for the spars and small fittings.
 - Fine thread for the standing and running rigging, plus 0.3 mm wire for small attachment eyes.
 - Light sail material and the printable cutting patterns below.
 - Suitable glue, a small file, fine abrasive paper and a little matching paint for the hull seam.
 
-The supplied project is prepared for a **Bambu Lab A1 with a 0.4 mm nozzle**. For a P1S or another printer, select the correct machine and slice again before printing. The ten plates are estimated at **about 24.5 hours and 425 g of PLA**, including supports, colour changes and test pieces. Actual results depend on the printer and materials.
+The supplied project is prepared for a **Bambu Lab A1 with a 0.4 mm nozzle**. For a P1S or another printer, select the correct machine and slice again before printing. The ten plates are estimated at **about 24.6 hours and 427 g of PLA**, including supports, colour changes and test pieces. Actual results depend on the printer and materials.
 
 Print the fit tests first, assemble the hull and deck, finish the seam, then add the windows, timber, fittings and rig. The [assembly guide](docs/ASSEMBLY_GUIDE.md) takes you through each stage.
 

@@ -290,14 +290,6 @@
           "print_params": {}
         },
         {
-          "path": "print/stl/MAST_3.stl",
-          "count": 1,
-          "filaments": [
-            5
-          ],
-          "print_params": {}
-        },
-        {
           "path": "print/stl/MAST_DECK_SHOE.stl",
           "count": 1,
           "filaments": [

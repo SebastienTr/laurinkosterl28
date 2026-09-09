@@ -1,5 +1,5 @@
 {
-  "model_sha256": "4f729290e5345ec4b6eba73a744b7e86ba7f56399b59b8792713a1d558c6a5bb",
+  "model_sha256": "905169319c5a6155843f242ba03e2e4a56727d13e0b575756b5331c3233467dc",
   "private_images": 0,
   "embedded_notes": 0,
   "linked_libraries": 0,
@@ -171,7 +171,7 @@
     },
     {
       "part": "WOOD_COAMING_ASSEMBLY",
-      "triangles": 6306,
+      "triangles": 6598,
       "non_manifold_edges": 0,
       "connected_components": 1,
       "dimensions_mm": [
@@ -237,46 +237,35 @@
     },
     {
       "part": "MAST_1",
-      "triangles": 1052,
+      "triangles": 1416,
       "non_manifold_edges": 0,
       "connected_components": 1,
       "dimensions_mm": [
-        120.34427,
-        4.0,
-        8.28282
+        137.70903,
+        137.70905,
+        7.85277
       ]
     },
     {
       "part": "MAST_2",
-      "triangles": 984,
+      "triangles": 1344,
       "non_manifold_edges": 0,
       "connected_components": 1,
       "dimensions_mm": [
-        120.29425,
-        4.0,
-        8.04894
-      ]
-    },
-    {
-      "part": "MAST_3",
-      "triangles": 1484,
-      "non_manifold_edges": 0,
-      "connected_components": 1,
-      "dimensions_mm": [
-        120.34424,
-        4.0,
-        9.39999
+        124.28969,
+        124.28972,
+        9.426
       ]
     },
     {
       "part": "BOOM",
-      "triangles": 2594,
+      "triangles": 2528,
       "non_manifold_edges": 0,
       "connected_components": 1,
       "dimensions_mm": [
-        120.03133,
-        3.2,
-        9.8
+        87.68311,
+        87.68313,
+        9.24246
       ]
     },
     {
@@ -292,7 +281,7 @@
     },
     {
       "part": "BOOM_SADDLE",
-      "triangles": 276,
+      "triangles": 284,
       "non_manifold_edges": 0,
       "connected_components": 1,
       "dimensions_mm": [
@@ -325,24 +314,24 @@
     },
     {
       "part": "GENOA_TRACK_STARBOARD",
-      "triangles": 1078,
+      "triangles": 1998,
       "non_manifold_edges": 0,
       "connected_components": 1,
       "dimensions_mm": [
-        24.0,
+        60.0,
         2.6,
-        5.35878
+        5.50067
       ]
     },
     {
       "part": "GENOA_TRACK_PORT",
-      "triangles": 1078,
+      "triangles": 1998,
       "non_manifold_edges": 0,
       "connected_components": 1,
       "dimensions_mm": [
-        24.0,
+        60.0,
         2.6,
-        5.35879
+        5.50067
       ]
     },
     {
@@ -352,8 +341,8 @@
       "connected_components": 1,
       "dimensions_mm": [
         3.0,
-        31.0,
-        3.45
+        49.6,
+        4.35
       ]
     },
     {
@@ -446,7 +435,7 @@
     },
     {
       "part": "UPPER_DECK",
-      "triangles": 398394,
+      "triangles": 399418,
       "non_manifold_edges": 0,
       "connected_components": 1,
       "dimensions_mm": [

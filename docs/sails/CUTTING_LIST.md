@@ -18,7 +18,7 @@ All measurements are millimetres on the 1:30 model. Thread lengths include 40 mm
 | CAP_SHROUD_STARBOARD | CAP_SHROUD_STARBOARD → SPREADER_STARBOARD → MASTHEAD_AFT | 412 |
 | LOWER_FORWARD_STARBOARD | LOWER_FORWARD_STARBOARD → LOWER_SHROUDS | 240 |
 | LOWER_AFT_STARBOARD | LOWER_AFT_STARBOARD → LOWER_SHROUDS | 242 |
-| MAINSHEET | BOOM_SHEET → MAINSHEET_CAR → BOOM_SHEET → MAINSHEET_CAR | 179 |
+| MAINSHEET | BOOM_SHEET → MAINSHEET_CAR → BOOM_SHEET → MAINSHEET_CAR | 151 |
 | VANG | BOOM_VANG → VANG_DECK_PORT | 83 |
 
 Add two 450 mm halyards (head corner → masthead eye → foot eye), two 180 mm genoa sheets (clew → side car → winch), and a 150 mm outhaul (main clew → boom end). Cut mast lacing as needed.

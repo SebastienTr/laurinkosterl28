@@ -35,7 +35,8 @@ The supplied profiles are provisional Generic PLA settings. Set the profiles for
 | Item | Used for |
 |---|---|
 | 2 mm metal rod | Continuous mast core; start around 378 mm and trim after fitting |
-| 1 mm metal rod | Boom core and spreader; 120 mm boom, about 56 mm finished spreader span |
+| 1.5 mm metal rod | One-piece boom core; start around 120 mm and trim after fitting |
+| 1 mm metal rod | Spreader; about 56 mm finished span |
 | 0.8 mm metal pins | Rudder and stern fittings; cut to fit |
 | Fine model thread | Shrouds, stays and running rigging, including two backstays |
 | Glue suitable for PLA | Hull joint and separate fittings |

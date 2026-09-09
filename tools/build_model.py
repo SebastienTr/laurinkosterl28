@@ -384,18 +384,21 @@ for name,z0,z1 in [('PLANCHE_BASSE',20.8,29),('PLANCHE_HAUTE',29.2,40.2)]:
  o=box(name,(196.2,0,(z0+z1)/2),(1.2,16.6,z1-z0),wood);register(o,Matrix.Rotation(math.pi/2,4,'Y'))
 lid=box('CAPOT_COULISSANT',(184.7,0,41.4),(28.6,21.6,1.2),cream)
 boolean(lid,box('Prise capot',(197,0,42.2),(1.4,8,1.0),wood),'UNION');register(lid)
-# Oval mast sleeves, three printable lengths with an uninterrupted metal core.
+# Two longer sleeves meet inside the spreader collar around a continuous metal core.
 A=Vector((105.667,0,39));B=Vector((109.667,0,400));D=(B-A).normalized();L=(B-A).length
-for i in range(3):
- a=A+D*(i*L/3+(.05 if i else 0));b=A+D*((i+1)*L/3-(.05 if i<2 else 0))
- o=cyl(f'MAT_{i+1}',a,b,2.75,inner=1.15,ry=2.0,n=64)
- # orient length horizontally, then support the curved underside in slicer
- register(o,Matrix.Rotation(math.pi/2,4,'Y'))
-cyl('Tige laiton Ø2 — 378 mm',A-D*18,B-D*1,1,silver,collection=ref)
-# Boom sleeve and core, printed separately, attached by a saddle at the mast.
-boomA=Vector((110,0,74));boomB=Vector((230,0,74.8))
-register(cyl('BOME',boomA,boomB,2.35,inner=.7,ry=1.6,n=48))
-cyl('Tige bôme Ø1 — environ 120 mm',boomA,boomB,.5,silver,collection=ref)
+mast_joint=190.0
+mast_spans=[(0,mast_joint-.05),(mast_joint+.05,L)]
+def spar_print_rotation(direction):
+ # Level the longitudinal axis before turning it diagonally on the print bed.
+ return Matrix.Rotation(math.pi/4,4,'Z')@direction.rotation_difference(Vector((1,0,0))).to_matrix().to_4x4()
+for i,(start,end) in enumerate(mast_spans):
+ o=cyl(f'MAT_{i+1}',A+D*start,A+D*end,2.75,inner=1.15,ry=2.4,n=64)
+ register(o,spar_print_rotation(D))
+cyl('Mast brass core - diameter 2 mm, length 378 mm',A-D*18,B-D*1,1,silver,collection=ref)
+# One-piece boom with thicker sidewalls and a 1.5 mm metal core.
+boomA=Vector((110,0,74));boomB=Vector((230,0,74.8));boomD=(boomB-boomA).normalized()
+register(cyl('BOME',boomA,boomB,2.35,inner=.9,ry=2.0,n=64),spar_print_rotation(boomD))
+cyl('Boom metal core - diameter 1.5 mm, length about 120 mm',boomA,boomB,.75,silver,collection=ref)
 # Mast collar with transverse bar aft of the mast core to avoid intersecting it.
 sp=A+D*190
 collar=box('COLLIER_BARRES_FLECHE',(sp.x+1.2,0,sp.z),(10.5,8.5,5),silver)
@@ -407,7 +410,7 @@ cyl('Barres de flèche — fil laiton Ø1, 56 mm',(sp.x+4,-28,sp.z),(sp.x+4,28,s
 # Glued saddle for boom, cut to oval mast approximate circular seat.
 saddle=box('SUPPORT_BOME',(108.9,0,74),(6.5,6,6),silver)
 cut_hole(saddle,(105.9,0,60),(105.9,0,90),2.85)
-cut_hole(saddle,(108,0,74),(115,0,74.05),.7)
+cut_hole(saddle,(108,0,74),(115,0,74.05),.9)
 register(saddle)
 # Small fittings are functional model interfaces, dimensioned in millimetres.
 rig_points={};rig_routes=[]
@@ -447,28 +450,36 @@ for side,label in [(-1,'STARBOARD'),(1,'PORT')]:
  cut_hole(hull,p-Vector((0,0,2)),p+Vector((0,0,.5)),.75)
  cut_hole(win,p+Vector((0,0,3.4)),p+Vector((0,0,5)),.5)
  register(win);rig_points['WINCH_'+label]=list(p+Vector((0,0,2.8)))
-# Short genoa tracks with a fixed car. Eyes are wire loops in blind pilot holes.
+# Longer genoa tracks: a provisional 1.80 m full-size length, pending measurement.
 for side,label in [(-1,'STARBOARD'),(1,'PORT')]:
- x,y=171,side*31
- hit,p,n,idx=hull.ray_cast(Vector((x,y,100)),Vector((0,0,-1)))
- track=box('GENOA_TRACK_'+label,(x,y,p.z+1.6),(24,1.8,1.5),silver)
- for tx in (162,180):
+ x,y=180,side*31
+ support_x=(143,160,177,194)
+ contacts=[]
+ for tx in support_x:
   hit,q,n,idx=hull.ray_cast(Vector((tx,y,100)),Vector((0,0,-1)))
-  boolean(track,cyl('Track pedestal',q,(tx,y,p.z+1.7),1.2,silver),'UNION')
+  if not hit:raise RuntimeError('Genoa track misses deck: '+label)
+  contacts.append(q)
+ rail_bottom=max(q.z for q in contacts)+.15
+ track=box('GENOA_TRACK_'+label,(168,y,rail_bottom+.75),(60,1.8,1.5),silver)
+ for q in contacts:
+  boolean(track,cyl('Track pedestal',q,(q.x,y,rail_bottom+.8),1.2,silver),'UNION')
   boolean(track,cyl('Track pin',q-Vector((0,0,1.8)),q+Vector((0,0,.4)),.6,silver),'UNION')
   cut_hole(hull,q-Vector((0,0,2)),q+Vector((0,0,.5)),.75)
- boolean(track,box('Genoa car',(x,y,p.z+2.7),(3.2,2.6,1.4),silver),'UNION')
- cut_hole(track,(x,y,p.z+1),(x,y,p.z+4),.4)
+ boolean(track,box('Genoa car',(x,y,rail_bottom+1.85),(3.2,2.6,1.4),silver),'UNION')
+ cut_hole(track,(x,y,rail_bottom+.2),(x,y,rail_bottom+3.2),.4)
  boolean(track,dup(hull,'Deck contact trim'))
- register(track);rig_points['GENOA_CAR_'+label]=[x,y,p.z+4.5]
-# Traveller lies aft across the cockpit below the tiller, as in the close-up.
-trav=box('MAINSHEET_TRAVELLER',(252.33,0,31.7),(2.0,31,1.4),silver)
+ register(track);rig_points['GENOA_CAR_'+label]=[x,y,rail_bottom+3.65]
+# The traveller spans the middle of the cockpit directly below the boom sheet tab.
+trav_x,trav_y,trav_bottom=225.0,23.85,31.1
+trav=box('MAINSHEET_TRAVELLER',(trav_x,0,trav_bottom+.8),(2.4,49.6,1.6),silver)
 for side in (-1,1):
- boolean(trav,cyl('Traveller pin',(252.33,side*12,30.0),(252.33,side*12,31.4),.45,silver),'UNION')
- cut_hole(rear,(252.33,side*12,29.8),(252.33,side*12,32),.575)
-boolean(trav,box('Mainsheet car',(252.33,0,32.8),(3,3.6,1.3),silver),'UNION')
-cut_hole(trav,(252.33,0,31.2),(252.33,0,35),.4)
-register(trav);rig_points['MAINSHEET_CAR']=[252.33,0,34.5]
+ y=side*trav_y
+ boolean(rear,cyl('Traveller timber backing',(trav_x,y,29.4),(trav_x,y,31.0),1.8,wood),'UNION')
+ boolean(trav,cyl('Traveller pin',(trav_x,y,29.5),(trav_x,y,31.5),.45,silver),'UNION')
+ for support in (rear,hull):cut_hole(support,(trav_x,y,29.3),(trav_x,y,32),.575)
+boolean(trav,box('Mainsheet car',(trav_x,0,33.2),(3,3.6,1.3),silver),'UNION')
+cut_hole(trav,(trav_x,0,31.6),(trav_x,0,35.2),.4)
+register(trav);rig_points['MAINSHEET_CAR']=[trav_x,0,34.9]
 # Blind holes in external lugs avoid the metal cores through the spars.
 def spar_eye(owner,label,point):
  p=Vector(point)
@@ -479,9 +490,9 @@ def spar_eye(owner,label,point):
  cut_hole(owner,p-Vector((0,2.2,0)),p+Vector((0,2.2,0)),.5)
  rig_points[label]=list(p)
 for label,x,z in [('MASTHEAD_FORWARD',106.4,396),('MASTHEAD_AFT',112.6,396)]:
- spar_eye(bpy.data.objects['MAT_3'],label,(x,0,z))
+ spar_eye(bpy.data.objects['MAT_2'],label,(x,0,z))
 for label,x,z in [('LOWER_SHROUDS',110.7,224),('MAIN_TACK',109.6,79)]:
- spar_eye(bpy.data.objects['MAT_2' if z>160 else 'MAT_1'],label,(x,0,z))
+ spar_eye(bpy.data.objects['MAT_2' if (Vector((x,0,z))-A).dot(D)>mast_joint else 'MAT_1'],label,(x,0,z))
 for label,x,z in [('BOOM_TACK',113,77.0),('BOOM_CLEW',225,77.8),('BOOM_SHEET',225,71.8),('BOOM_VANG',139,71.2)]:
  spar_eye(bpy.data.objects['BOME'],label,(x,0,z))
 rig_points['SPREADER_PORT']=[sp.x+4,28,sp.z]
