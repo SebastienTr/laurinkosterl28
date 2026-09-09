@@ -28,21 +28,6 @@ for o in rem:
  audit.append({'part':o.name,'intersection_with_deck_mm3':vol});bpy.data.objects.remove(tmp,do_unlink=True)
 print('SEAT CHECK',json.dumps(audit),flush=True)
 (R/'seat_intersection_check.json').write_text(json.dumps(audit,indent=2))
-cam=sc.camera
-for o in sc.objects:
- if o.name.startswith(('RIGGING','BACKSTAY','MAST_','BOOM','SPREADER','DISPLAY_CRADLE')) and o not in rem:o.hide_render=True
-cam.location=(230,-170,145);cam.rotation_euler=(Vector((154,0,39))-cam.location).to_track_quat('-Z','Y').to_euler();cam.data.ortho_scale=150
-sc.render.filepath=str(R/'previews/removable_details_assembled.png');bpy.ops.render.render(write_still=True)
-for o in rem:
- if o.name.startswith('WINDOW'):o.location.y+=20 if 'PORT' in o.name and 'STARBOARD' not in o.name else -20
- else:o.location.z+=15
-sc.render.filepath=str(R/'previews/removable_details_exploded.png');bpy.ops.render.render(write_still=True)
-for o in rem:o.location=(0,0,0)
-for o in sc.objects:
- if o.name.startswith(('RIGGING','BACKSTAY','MAST_','BOOM','SPREADER','DISPLAY_CRADLE')):o.hide_render=False
-sc.render.filepath=str(R/'previews/assembled_model.png')
-cam.location=(500,-700,420);cam.rotation_euler=(Vector((139,0,173))-cam.location).to_track_quat('-Z','Y').to_euler();cam.data.ortho_scale=680
-bpy.ops.render.render(write_still=True)
 bpy.ops.outliner.orphans_purge(do_recursive=True)
 sc.render.filepath='//../docs/images/assembled_model.png'
 bpy.context.preferences.filepaths.save_version=0

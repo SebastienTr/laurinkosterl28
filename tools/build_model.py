@@ -526,6 +526,7 @@ def export(o,rot,directory):
  data={'name':o.name,'vertices':[[round(float(c),7) for c in pt-mins] for pt in pts],'triangles':[list(t.vertices) for t in o.data.loop_triangles],'filaments':[o.data.polygons[t.polygon_index].material_index+1 for t in o.data.loop_triangles]}
  (R/'colors'/(o.name+'.json')).write_text(json.dumps(data,separators=(',',':')))
  rec={'piece':o.name,'file':str(p.relative_to(R)),'dimensions_print_mm':[round(v,3) for v in maxs-mins],'quantity':1,**au};records.append(rec);log(json.dumps(rec))
+(R/'print_layout.json').write_text(json.dumps([{'name':o.name,'rotation':[list(row) for row in rot],'kind':kind} for group,kind in [(parts,'part'),(tests,'fit-test')] for o,rot in group],indent=2))
 for o,rot in parts:export(o,rot,R/'stl')
 for o,rot in tests:
  for c in list(o.users_collection):c.objects.unlink(o)

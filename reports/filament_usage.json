@@ -1,44 +1,11 @@
-[
-  {
-    "id": 1,
-    "color": "IVORY",
-    "estimated_total_g": 181.12,
-    "suggested_available_g_for_one_model": 240
-  },
-  {
-    "id": 2,
-    "color": "BURGUNDY",
-    "estimated_total_g": 97.7,
-    "suggested_available_g_for_one_model": 130
-  },
-  {
-    "id": 3,
-    "color": "DARK_TEAL",
-    "estimated_total_g": 51.14,
-    "suggested_available_g_for_one_model": 70
-  },
-  {
-    "id": 4,
-    "color": "MAHOGANY_BROWN",
-    "estimated_total_g": 35.96,
-    "suggested_available_g_for_one_model": 50
-  },
-  {
-    "id": 5,
-    "color": "SILVER_GREY",
-    "estimated_total_g": 39.72,
-    "suggested_available_g_for_one_model": 60
-  },
-  {
-    "id": 6,
-    "color": "SMOKED_GLAZING",
-    "estimated_total_g": 2.47,
-    "suggested_available_g_for_one_model": 10
-  },
-  {
-    "id": 7,
-    "color": "WATERLINE_GREY_GREEN",
-    "estimated_total_g": 10.38,
-    "suggested_available_g_for_one_model": 20
+{
+  "estimated_PLA_g_by_project_colour": {
+    "1": 181.12130764126778,
+    "4": 35.958633452653885,
+    "5": 39.72483587265015,
+    "2": 97.69925022125244,
+    "3": 51.14417314529419,
+    "7": 10.378203868865967,
+    "6": 2.4732251167297363
   }
-]
+}
