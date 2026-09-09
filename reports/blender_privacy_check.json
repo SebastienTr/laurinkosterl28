@@ -1,0 +1,18 @@
+[
+  {
+    "file": "source/base_geometry.blend",
+    "mesh_objects_preserved": 130,
+    "geometry_unchanged": true,
+    "images": 0,
+    "embedded_texts": 0,
+    "linked_libraries": 0
+  },
+  {
+    "file": "model/Laurine_L28.blend",
+    "mesh_objects_preserved": 63,
+    "geometry_unchanged": true,
+    "images": 0,
+    "embedded_texts": 0,
+    "linked_libraries": 0
+  }
+]

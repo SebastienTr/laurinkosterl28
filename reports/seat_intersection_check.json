@@ -1,0 +1,38 @@
+[
+  {
+    "part": "COMPANIONWAY_CHANNEL_STARBOARD",
+    "intersection_with_deck_mm3": 0.0
+  },
+  {
+    "part": "COMPANIONWAY_CHANNEL_PORT",
+    "intersection_with_deck_mm3": 0.0
+  },
+  {
+    "part": "MAST_DECK_SHOE",
+    "intersection_with_deck_mm3": 0.0
+  },
+  {
+    "part": "HATCH_RAIL_STARBOARD",
+    "intersection_with_deck_mm3": 0.0
+  },
+  {
+    "part": "HATCH_RAIL_PORT",
+    "intersection_with_deck_mm3": 0.0
+  },
+  {
+    "part": "WINDOW_STARBOARD_1",
+    "intersection_with_deck_mm3": 0.0
+  },
+  {
+    "part": "WINDOW_STARBOARD_2",
+    "intersection_with_deck_mm3": 0.0
+  },
+  {
+    "part": "WINDOW_PORT_1",
+    "intersection_with_deck_mm3": 0.0
+  },
+  {
+    "part": "WINDOW_PORT_2",
+    "intersection_with_deck_mm3": 0.0
+  }
+]

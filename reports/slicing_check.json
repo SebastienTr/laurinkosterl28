@@ -1,0 +1,162 @@
+[
+  {
+    "plate": "01 Fit tests",
+    "colors": [
+      1,
+      4,
+      5
+    ],
+    "gcode_color_ids": [
+      1,
+      4,
+      5
+    ],
+    "objects": 10,
+    "seconds": 6798.5068359375,
+    "total_PLA_g": 23.06683921813965,
+    "filament_changes": 30,
+    "warning": ""
+  },
+  {
+    "plate": "02 Lower hull",
+    "colors": [
+      1,
+      2,
+      3,
+      7
+    ],
+    "gcode_color_ids": [
+      1,
+      2,
+      3,
+      7
+    ],
+    "objects": 1,
+    "seconds": 28927.8828125,
+    "total_PLA_g": 166.7846155166626,
+    "filament_changes": 75,
+    "warning": ""
+  },
+  {
+    "plate": "03 Upper deck",
+    "colors": [
+      1,
+      2
+    ],
+    "gcode_color_ids": [
+      1,
+      2
+    ],
+    "objects": 1,
+    "seconds": 28433.4375,
+    "total_PLA_g": 141.13719749450684,
+    "filament_changes": 90,
+    "warning": ""
+  },
+  {
+    "plate": "04 Wood and display cradles",
+    "colors": [
+      4
+    ],
+    "gcode_color_ids": [
+      4
+    ],
+    "objects": 11,
+    "seconds": 5073.50341796875,
+    "total_PLA_g": 33.20957946777344,
+    "filament_changes": 0,
+    "warning": ""
+  },
+  {
+    "plate": "05 Metal deck fittings and spars",
+    "colors": [
+      5
+    ],
+    "gcode_color_ids": [
+      5
+    ],
+    "objects": 11,
+    "seconds": 3852.61767578125,
+    "total_PLA_g": 12.16321849822998,
+    "filament_changes": 0,
+    "warning": ""
+  },
+  {
+    "plate": "06 Pulpits and rudder guard",
+    "colors": [
+      5
+    ],
+    "gcode_color_ids": [
+      5
+    ],
+    "objects": 3,
+    "seconds": 4584.89794921875,
+    "total_PLA_g": 13.38708209991455,
+    "filament_changes": 0,
+    "warning": ""
+  },
+  {
+    "plate": "07 Window inserts",
+    "colors": [
+      6
+    ],
+    "gcode_color_ids": [
+      6
+    ],
+    "objects": 4,
+    "seconds": 972.9523315429688,
+    "total_PLA_g": 2.4732251167297363,
+    "filament_changes": 0,
+    "warning": ""
+  },
+  {
+    "plate": "08 Alignment pins",
+    "colors": [
+      1
+    ],
+    "gcode_color_ids": [
+      1
+    ],
+    "objects": 5,
+    "seconds": 689.5345458984375,
+    "total_PLA_g": 0.3032403290271759,
+    "filament_changes": 0,
+    "warning": ""
+  },
+  {
+    "plate": "09 Rudder and tiller fitting",
+    "colors": [
+      2,
+      3,
+      5,
+      7
+    ],
+    "gcode_color_ids": [
+      2,
+      3,
+      5,
+      7
+    ],
+    "objects": 1,
+    "seconds": 6273.19921875,
+    "total_PLA_g": 24.006608486175537,
+    "filament_changes": 36,
+    "warning": ""
+  },
+  {
+    "plate": "10 Sliding hatch",
+    "colors": [
+      1,
+      4
+    ],
+    "gcode_color_ids": [
+      1,
+      4
+    ],
+    "objects": 1,
+    "seconds": 798.311767578125,
+    "total_PLA_g": 1.9663245975971222,
+    "filament_changes": 1,
+    "warning": ""
+  }
+]

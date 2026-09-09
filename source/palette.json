@@ -1,0 +1,51 @@
+[
+  {
+    "id": 1,
+    "name": "IVORY",
+    "hex": "#E6DFC0",
+    "material": "PLA",
+    "commercial_reference": "To be selected"
+  },
+  {
+    "id": 2,
+    "name": "BURGUNDY",
+    "hex": "#6C2037",
+    "material": "PLA",
+    "commercial_reference": "To be selected"
+  },
+  {
+    "id": 3,
+    "name": "DARK_TEAL",
+    "hex": "#355C66",
+    "material": "PLA",
+    "commercial_reference": "To be selected"
+  },
+  {
+    "id": 4,
+    "name": "MAHOGANY_BROWN",
+    "hex": "#8C4825",
+    "material": "PLA",
+    "commercial_reference": "To be selected"
+  },
+  {
+    "id": 5,
+    "name": "SILVER_GREY",
+    "hex": "#B8BEC4",
+    "material": "PLA",
+    "commercial_reference": "To be selected"
+  },
+  {
+    "id": 6,
+    "name": "SMOKED_GLAZING",
+    "hex": "#263B48",
+    "material": "PLA",
+    "commercial_reference": "To be selected"
+  },
+  {
+    "id": 7,
+    "name": "WATERLINE_GREY_GREEN",
+    "hex": "#79918B",
+    "material": "PLA",
+    "commercial_reference": "To be selected"
+  }
+]

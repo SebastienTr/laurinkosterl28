@@ -1,0 +1,12 @@
+# Personal photographs, reference documents and local notes
+/private/
+# Intermediate builds; publish only reviewed deliverables
+/build/
+.venv/
+__pycache__/
+*.py[cod]
+*.blend[0-9]*
+*.log
+.DS_Store
+.env
+.env.*

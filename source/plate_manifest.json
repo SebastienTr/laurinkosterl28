@@ -1,0 +1,140 @@
+[
+  {
+    "plate": "01 Fit tests",
+    "colors": [
+      1,
+      4,
+      5
+    ],
+    "parts": [
+      "TEST_COMPANIONWAY",
+      "TEST_HULL_JOINT",
+      "TEST_MAST_ROD",
+      "TEST_MAST_STEP",
+      "LOWER_WASHBOARD",
+      "UPPER_WASHBOARD",
+      "ALIGNMENT_PIN_01",
+      "COMPANIONWAY_CHANNEL_PORT",
+      "COMPANIONWAY_CHANNEL_STARBOARD",
+      "MAST_DECK_SHOE"
+    ]
+  },
+  {
+    "plate": "02 Lower hull",
+    "colors": [
+      1,
+      2,
+      3,
+      7
+    ],
+    "parts": [
+      "LOWER_HULL"
+    ]
+  },
+  {
+    "plate": "03 Upper deck",
+    "colors": [
+      1,
+      2
+    ],
+    "parts": [
+      "UPPER_DECK"
+    ]
+  },
+  {
+    "plate": "04 Wood and display cradles",
+    "colors": [
+      4
+    ],
+    "parts": [
+      "DISPLAY_CRADLE_1",
+      "DISPLAY_CRADLE_2",
+      "LOWER_WASHBOARD",
+      "UPPER_WASHBOARD",
+      "WOOD_AFT_CROSSPIECE",
+      "WOOD_COAMING_CAP_PORT",
+      "WOOD_COAMING_CAP_STARBOARD",
+      "WOOD_COCKPIT_TRIM",
+      "WOOD_HANDRAIL_PORT",
+      "WOOD_HANDRAIL_STARBOARD",
+      "WOOD_TILLER"
+    ]
+  },
+  {
+    "plate": "05 Metal deck fittings and spars",
+    "colors": [
+      5
+    ],
+    "parts": [
+      "BOOM",
+      "BOOM_SADDLE",
+      "COMPANIONWAY_CHANNEL_PORT",
+      "COMPANIONWAY_CHANNEL_STARBOARD",
+      "HATCH_RAIL_PORT",
+      "HATCH_RAIL_STARBOARD",
+      "MAST_1",
+      "MAST_2",
+      "MAST_3",
+      "MAST_DECK_SHOE",
+      "SPREADER_COLLAR"
+    ]
+  },
+  {
+    "plate": "06 Pulpits and rudder guard",
+    "colors": [
+      5
+    ],
+    "parts": [
+      "BOW_PULPIT",
+      "STERN_PUSHPIT",
+      "LOWER_RUDDER_GUARD"
+    ]
+  },
+  {
+    "plate": "07 Window inserts",
+    "colors": [
+      6
+    ],
+    "parts": [
+      "WINDOW_PORT_1",
+      "WINDOW_PORT_2",
+      "WINDOW_STARBOARD_1",
+      "WINDOW_STARBOARD_2"
+    ]
+  },
+  {
+    "plate": "08 Alignment pins",
+    "colors": [
+      1
+    ],
+    "parts": [
+      "ALIGNMENT_PIN_01",
+      "ALIGNMENT_PIN_02",
+      "ALIGNMENT_PIN_03",
+      "ALIGNMENT_PIN_04",
+      "ALIGNMENT_PIN_05"
+    ]
+  },
+  {
+    "plate": "09 Rudder and tiller fitting",
+    "colors": [
+      2,
+      3,
+      5,
+      7
+    ],
+    "parts": [
+      "RUDDER"
+    ]
+  },
+  {
+    "plate": "10 Sliding hatch",
+    "colors": [
+      1,
+      4
+    ],
+    "parts": [
+      "SLIDING_HATCH"
+    ]
+  }
+]

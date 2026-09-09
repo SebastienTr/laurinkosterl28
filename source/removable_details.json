@@ -1,0 +1,66 @@
+[
+  {
+    "part": "COMPANIONWAY_CHANNEL_STARBOARD",
+    "side_clearance_mm": 0.15,
+    "bottom_clearance_mm": 0.15,
+    "assembly": "Glue into recess; keep washboard groove clear."
+  },
+  {
+    "part": "COMPANIONWAY_CHANNEL_PORT",
+    "side_clearance_mm": 0.15,
+    "bottom_clearance_mm": 0.15,
+    "assembly": "Glue into recess; keep washboard groove clear."
+  },
+  {
+    "part": "MAST_DECK_SHOE",
+    "side_clearance_mm": 0.15,
+    "bottom_clearance_mm": 0.15,
+    "assembly": "Glue shoe into its recess, align the 2 mm mast-core bore."
+  },
+  {
+    "part": "HATCH_RAIL_STARBOARD",
+    "side_clearance_mm": 0.15,
+    "pin_diameter_mm": 0.9,
+    "socket_diameter_mm": 1.15,
+    "assembly": "Seat all three locating pins, glue after cleaning."
+  },
+  {
+    "part": "HATCH_RAIL_PORT",
+    "side_clearance_mm": 0.15,
+    "pin_diameter_mm": 0.9,
+    "socket_diameter_mm": 1.15,
+    "assembly": "Seat all three locating pins, glue after cleaning."
+  },
+  {
+    "part": "WINDOW_STARBOARD_1",
+    "edge_clearance_mm": 0.15,
+    "back_clearance_mm": 0.15,
+    "minimum_thickness_mm": 1.25,
+    "outline_vertices": 81,
+    "assembly": "Flat back onto bed. Glue into matching recess from outside; no snap fit."
+  },
+  {
+    "part": "WINDOW_STARBOARD_2",
+    "edge_clearance_mm": 0.15,
+    "back_clearance_mm": 0.15,
+    "minimum_thickness_mm": 1.25,
+    "outline_vertices": 83,
+    "assembly": "Flat back onto bed. Glue into matching recess from outside; no snap fit."
+  },
+  {
+    "part": "WINDOW_PORT_1",
+    "edge_clearance_mm": 0.15,
+    "back_clearance_mm": 0.15,
+    "minimum_thickness_mm": 1.25,
+    "outline_vertices": 81,
+    "assembly": "Flat back onto bed. Glue into matching recess from outside; no snap fit."
+  },
+  {
+    "part": "WINDOW_PORT_2",
+    "edge_clearance_mm": 0.15,
+    "back_clearance_mm": 0.15,
+    "minimum_thickness_mm": 1.25,
+    "outline_vertices": 83,
+    "assembly": "Flat back onto bed. Glue into matching recess from outside; no snap fit."
+  }
+]

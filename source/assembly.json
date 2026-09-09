@@ -1,0 +1,499 @@
+{
+  "plates": [
+    {
+      "plate_name": "01 Fit tests",
+      "need_arrange": true,
+      "plate_params": {
+        "curr_bed_type": "Textured PEI Plate"
+      },
+      "objects": [
+        {
+          "path": "print/fit-tests/TEST_COMPANIONWAY.stl",
+          "count": 1,
+          "filaments": [
+            1
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/fit-tests/TEST_HULL_JOINT.stl",
+          "count": 1,
+          "filaments": [
+            1
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/fit-tests/TEST_MAST_ROD.stl",
+          "count": 1,
+          "filaments": [
+            1
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/fit-tests/TEST_MAST_STEP.stl",
+          "count": 1,
+          "filaments": [
+            1
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/stl/LOWER_WASHBOARD.stl",
+          "count": 1,
+          "filaments": [
+            4
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/stl/UPPER_WASHBOARD.stl",
+          "count": 1,
+          "filaments": [
+            4
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/stl/ALIGNMENT_PIN_01.stl",
+          "count": 1,
+          "filaments": [
+            1
+          ],
+          "print_params": {
+            "enable_support": "0",
+            "brim_type": "no_brim"
+          }
+        },
+        {
+          "path": "print/stl/COMPANIONWAY_CHANNEL_PORT.stl",
+          "count": 1,
+          "filaments": [
+            5
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/stl/COMPANIONWAY_CHANNEL_STARBOARD.stl",
+          "count": 1,
+          "filaments": [
+            5
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/stl/MAST_DECK_SHOE.stl",
+          "count": 1,
+          "filaments": [
+            5
+          ],
+          "print_params": {}
+        }
+      ]
+    },
+    {
+      "plate_name": "02 Lower hull",
+      "need_arrange": true,
+      "plate_params": {
+        "curr_bed_type": "Textured PEI Plate"
+      },
+      "objects": [
+        {
+          "path": "print/stl/LOWER_HULL.stl",
+          "count": 1,
+          "filaments": [
+            2
+          ],
+          "print_params": {
+            "enable_support": "0",
+            "brim_type": "no_brim"
+          }
+        }
+      ]
+    },
+    {
+      "plate_name": "03 Upper deck",
+      "need_arrange": true,
+      "plate_params": {
+        "curr_bed_type": "Textured PEI Plate"
+      },
+      "objects": [
+        {
+          "path": "print/stl/UPPER_DECK.stl",
+          "count": 1,
+          "filaments": [
+            1
+          ],
+          "print_params": {}
+        }
+      ]
+    },
+    {
+      "plate_name": "04 Wood and display cradles",
+      "need_arrange": true,
+      "plate_params": {
+        "curr_bed_type": "Textured PEI Plate"
+      },
+      "objects": [
+        {
+          "path": "print/stl/DISPLAY_CRADLE_1.stl",
+          "count": 1,
+          "filaments": [
+            4
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/stl/DISPLAY_CRADLE_2.stl",
+          "count": 1,
+          "filaments": [
+            4
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/stl/LOWER_WASHBOARD.stl",
+          "count": 1,
+          "filaments": [
+            4
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/stl/UPPER_WASHBOARD.stl",
+          "count": 1,
+          "filaments": [
+            4
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/stl/WOOD_AFT_CROSSPIECE.stl",
+          "count": 1,
+          "filaments": [
+            4
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/stl/WOOD_COAMING_CAP_PORT.stl",
+          "count": 1,
+          "filaments": [
+            4
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/stl/WOOD_COAMING_CAP_STARBOARD.stl",
+          "count": 1,
+          "filaments": [
+            4
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/stl/WOOD_COCKPIT_TRIM.stl",
+          "count": 1,
+          "filaments": [
+            4
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/stl/WOOD_HANDRAIL_PORT.stl",
+          "count": 1,
+          "filaments": [
+            4
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/stl/WOOD_HANDRAIL_STARBOARD.stl",
+          "count": 1,
+          "filaments": [
+            4
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/stl/WOOD_TILLER.stl",
+          "count": 1,
+          "filaments": [
+            4
+          ],
+          "print_params": {}
+        }
+      ]
+    },
+    {
+      "plate_name": "05 Metal deck fittings and spars",
+      "need_arrange": true,
+      "plate_params": {
+        "curr_bed_type": "Textured PEI Plate"
+      },
+      "objects": [
+        {
+          "path": "print/stl/BOOM.stl",
+          "count": 1,
+          "filaments": [
+            5
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/stl/BOOM_SADDLE.stl",
+          "count": 1,
+          "filaments": [
+            5
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/stl/COMPANIONWAY_CHANNEL_PORT.stl",
+          "count": 1,
+          "filaments": [
+            5
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/stl/COMPANIONWAY_CHANNEL_STARBOARD.stl",
+          "count": 1,
+          "filaments": [
+            5
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/stl/HATCH_RAIL_PORT.stl",
+          "count": 1,
+          "filaments": [
+            5
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/stl/HATCH_RAIL_STARBOARD.stl",
+          "count": 1,
+          "filaments": [
+            5
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/stl/MAST_1.stl",
+          "count": 1,
+          "filaments": [
+            5
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/stl/MAST_2.stl",
+          "count": 1,
+          "filaments": [
+            5
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/stl/MAST_3.stl",
+          "count": 1,
+          "filaments": [
+            5
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/stl/MAST_DECK_SHOE.stl",
+          "count": 1,
+          "filaments": [
+            5
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/stl/SPREADER_COLLAR.stl",
+          "count": 1,
+          "filaments": [
+            5
+          ],
+          "print_params": {}
+        }
+      ]
+    },
+    {
+      "plate_name": "06 Pulpits and rudder guard",
+      "need_arrange": true,
+      "plate_params": {
+        "curr_bed_type": "Textured PEI Plate"
+      },
+      "objects": [
+        {
+          "path": "print/stl/BOW_PULPIT.stl",
+          "count": 1,
+          "filaments": [
+            5
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/stl/STERN_PUSHPIT.stl",
+          "count": 1,
+          "filaments": [
+            5
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/stl/LOWER_RUDDER_GUARD.stl",
+          "count": 1,
+          "filaments": [
+            5
+          ],
+          "print_params": {}
+        }
+      ]
+    },
+    {
+      "plate_name": "07 Window inserts",
+      "need_arrange": true,
+      "plate_params": {
+        "curr_bed_type": "Textured PEI Plate"
+      },
+      "objects": [
+        {
+          "path": "print/stl/WINDOW_PORT_1.stl",
+          "count": 1,
+          "filaments": [
+            6
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/stl/WINDOW_PORT_2.stl",
+          "count": 1,
+          "filaments": [
+            6
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/stl/WINDOW_STARBOARD_1.stl",
+          "count": 1,
+          "filaments": [
+            6
+          ],
+          "print_params": {}
+        },
+        {
+          "path": "print/stl/WINDOW_STARBOARD_2.stl",
+          "count": 1,
+          "filaments": [
+            6
+          ],
+          "print_params": {}
+        }
+      ]
+    },
+    {
+      "plate_name": "08 Alignment pins",
+      "need_arrange": true,
+      "plate_params": {
+        "curr_bed_type": "Textured PEI Plate"
+      },
+      "objects": [
+        {
+          "path": "print/stl/ALIGNMENT_PIN_01.stl",
+          "count": 1,
+          "filaments": [
+            1
+          ],
+          "print_params": {
+            "enable_support": "0",
+            "brim_type": "no_brim"
+          }
+        },
+        {
+          "path": "print/stl/ALIGNMENT_PIN_02.stl",
+          "count": 1,
+          "filaments": [
+            1
+          ],
+          "print_params": {
+            "enable_support": "0",
+            "brim_type": "no_brim"
+          }
+        },
+        {
+          "path": "print/stl/ALIGNMENT_PIN_03.stl",
+          "count": 1,
+          "filaments": [
+            1
+          ],
+          "print_params": {
+            "enable_support": "0",
+            "brim_type": "no_brim"
+          }
+        },
+        {
+          "path": "print/stl/ALIGNMENT_PIN_04.stl",
+          "count": 1,
+          "filaments": [
+            1
+          ],
+          "print_params": {
+            "enable_support": "0",
+            "brim_type": "no_brim"
+          }
+        },
+        {
+          "path": "print/stl/ALIGNMENT_PIN_05.stl",
+          "count": 1,
+          "filaments": [
+            1
+          ],
+          "print_params": {
+            "enable_support": "0",
+            "brim_type": "no_brim"
+          }
+        }
+      ]
+    },
+    {
+      "plate_name": "09 Rudder and tiller fitting",
+      "need_arrange": true,
+      "plate_params": {
+        "curr_bed_type": "Textured PEI Plate"
+      },
+      "objects": [
+        {
+          "path": "print/stl/RUDDER.stl",
+          "count": 1,
+          "filaments": [
+            3
+          ],
+          "print_params": {}
+        }
+      ]
+    },
+    {
+      "plate_name": "10 Sliding hatch",
+      "need_arrange": true,
+      "plate_params": {
+        "curr_bed_type": "Textured PEI Plate"
+      },
+      "objects": [
+        {
+          "path": "print/stl/SLIDING_HATCH.stl",
+          "count": 1,
+          "filaments": [
+            1
+          ],
+          "print_params": {}
+        }
+      ]
+    }
+  ]
+}
